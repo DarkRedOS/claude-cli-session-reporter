@@ -1,0 +1,220 @@
+#!/bin/bash
+
+# Claude Report Script
+# Sends Claude Code session to receiver server
+# Works independently of Claude Code - no model dependency
+
+# Configuration
+RECEIVER_URL="${CLAUDE_RECEIVER_URL:-http://localhost:3000}"
+API_ENDPOINT="${RECEIVER_URL}/api/report"
+HISTORY_FILE="$HOME/.claude/history.jsonl"
+PROJECTS_DIR="$HOME/.claude/projects"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Print usage
+usage() {
+    echo "Usage: claude-report [options]"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help     Show this help message"
+    echo "  -s, --session  Specify session ID (default: latest)"
+    echo "  -u, --url      Custom receiver URL (default: http://localhost:3000)"
+    echo ""
+    echo "Examples:"
+    echo "  claude-report              # Send latest session"
+    echo "  claude-report -s 12345     # Send specific session"
+    echo "  claude-report -u http://localhost:8080  # Custom URL"
+    exit 0
+}
+
+# Parse arguments
+SESSION_ID=""
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            usage
+            ;;
+        -s|--session)
+            SESSION_ID="$2"
+            shift 2
+            ;;
+        -u|--url)
+            RECEIVER_URL="$2"
+            API_ENDPOINT="${RECEIVER_URL}/api/report"
+            shift 2
+            ;;
+        *)
+            echo -e "${RED}Unknown option: $1${NC}"
+            usage
+            ;;
+    esac
+done
+
+# Check if receiver server is running
+check_server() {
+    if ! curl -s -f "${RECEIVER_URL}/health" > /dev/null 2>&1; then
+        echo -e "${RED}Error: Receiver server is not running at ${RECEIVER_URL}${NC}"
+        echo ""
+        echo "Start the receiver server:"
+        echo "  cd $(dirname "$0")/receiver && npm start"
+        exit 1
+    fi
+}
+
+# Sanitize path for directory name
+sanitize_path() {
+    echo "$1" | sed 's/[\/.]/-/g'
+}
+
+# Get session data from project file
+get_session_data() {
+    local session_id="$1"
+    local working_dir="$2"
+    
+    # Sanitize working directory to match Claude's naming convention
+    local sanitized_dir=$(sanitize_path "$working_dir")
+    local session_file="$PROJECTS_DIR/$sanitized_dir/$session_id.jsonl"
+    
+    # Try to read the file directly (handles extended attributes)
+    if ! cat "$session_file" > /dev/null 2>&1; then
+        echo -e "${RED}Error: Cannot read session file at $session_file${NC}"
+        echo -e "${YELLOW}Looking for session in: $PROJECTS_DIR${NC}"
+        echo -e "${YELLOW}Available project directories:${NC}"
+        ls -1 "$PROJECTS_DIR" 2>/dev/null || echo "  (none)"
+        return 1
+    fi
+    
+    # Read the entire session file
+    cat "$session_file"
+}
+
+# Get latest session info from history
+get_latest_session() {
+    if [ ! -f "$HISTORY_FILE" ]; then
+        echo -e "${RED}Error: History file not found at $HISTORY_FILE${NC}"
+        exit 1
+    fi
+    
+    # Get the last entry from history
+    tail -1 "$HISTORY_FILE"
+}
+
+# Send report to receiver
+send_report() {
+    local session_data="$1"
+    local session_id="$2"
+    local working_dir="$3"
+    
+    echo -e "${YELLOW}Sending session $session_id to receiver...${NC}"
+
+    # Convert JSONL to JSON array
+    local json_array="["
+    local first=true
+    while IFS= read -r line; do
+        if [ -n "$line" ]; then
+            if [ "$first" = true ]; then
+                json_array="$json_array$line"
+                first=false
+            else
+                json_array="$json_array,$line"
+            fi
+        fi
+    done <<< "$session_data"
+    json_array="$json_array]"
+
+    # Send to receiver
+    RESPONSE=$(curl -s -X POST "$API_ENDPOINT" \
+        -H "Content-Type: application/json" \
+        -d "{\"sessionId\": \"$session_id\", \"sessionData\": $json_array, \"workingDir\": \"$working_dir\"}")
+
+    # Check response
+    if echo "$RESPONSE" | grep -q '"success":true'; then
+        REPORT_ID=$(echo "$RESPONSE" | grep -o '"reportId":[0-9]*' | cut -d':' -f2)
+        echo -e "${GREEN}✓ Report sent successfully!${NC}"
+        echo -e "${GREEN}  Report ID: $REPORT_ID${NC}"
+        echo -e "${GREEN}  View at: ${RECEIVER_URL}/${NC}"
+        return 0
+    else
+        echo -e "${RED}✗ Failed to send report${NC}"
+        echo "Response: $RESPONSE"
+        return 1
+    fi
+}
+
+# Main execution
+main() {
+    echo "Claude Report Tool"
+    echo "=================="
+    echo ""
+
+    check_server
+    
+    # Get session info
+    if [ -n "$SESSION_ID" ]; then
+        # User provided session ID, need to find working directory
+        echo -e "${YELLOW}Searching for session $SESSION_ID...${NC}"
+        
+        # Search in all project directories
+        FOUND_SESSION=""
+        FOUND_DIR=""
+        
+        for project_dir in "$PROJECTS_DIR"/*/; do
+            if [ -d "$project_dir" ]; then
+                session_file="$project_dir$SESSION_ID.jsonl"
+                if cat "$session_file" > /dev/null 2>&1; then
+                    FOUND_SESSION=$(cat "$session_file")
+                    # Extract working directory from first message
+                    FOUND_DIR=$(echo "$FOUND_SESSION" | head -1 | grep -o '"cwd":"[^"]*"' | cut -d'"' -f4)
+                    break
+                fi
+            fi
+        done
+        
+        if [ -z "$FOUND_SESSION" ]; then
+            echo -e "${RED}Error: Session $SESSION_ID not found${NC}"
+            exit 1
+        fi
+        
+        SESSION_DATA="$FOUND_SESSION"
+        WORKING_DIR="$FOUND_DIR"
+    else
+        # Get latest session from history
+        LATEST_ENTRY=$(get_latest_session)
+        
+        if [ -z "$LATEST_ENTRY" ]; then
+            echo -e "${RED}Error: No session data found${NC}"
+            exit 1
+        fi
+        
+        # Extract session ID and working directory
+        SESSION_ID=$(echo "$LATEST_ENTRY" | grep -o '"sessionId":"[^"]*"' | cut -d'"' -f4)
+        WORKING_DIR=$(echo "$LATEST_ENTRY" | grep -o '"project":"[^"]*"' | cut -d'"' -f4)
+        
+        if [ -z "$SESSION_ID" ]; then
+            echo -e "${RED}Error: Could not extract session ID${NC}"
+            exit 1
+        fi
+        
+        if [ -z "$WORKING_DIR" ]; then
+            echo -e "${RED}Error: Could not extract working directory${NC}"
+            exit 1
+        fi
+        
+        # Get full session data from project file
+        SESSION_DATA=$(get_session_data "$SESSION_ID" "$WORKING_DIR")
+        
+        if [ $? -ne 0 ]; then
+            exit 1
+        fi
+    fi
+    
+    send_report "$SESSION_DATA" "$SESSION_ID" "$WORKING_DIR"
+}
+
+# Run main function
+main

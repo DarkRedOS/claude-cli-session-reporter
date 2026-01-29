@@ -1,0 +1,967 @@
+[
+  {
+    "id": 1769694053972,
+    "session_id": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+    "timestamp": "2026-01-29T13:40:53.972Z",
+    "session_data": [
+      {
+        "type": "file-history-snapshot",
+        "messageId": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "snapshot": {
+          "messageId": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T12:58:54.625Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": null,
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hi"
+        },
+        "uuid": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "timestamp": "2026-01-29T12:58:54.625Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_9e82b5d1-0417-4947-9dce-104ca169e75b",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hi! I'm here to help you with your software engineering tasks. What would you like to work on today?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "64a82183-c087-4623-a87e-61b945087432",
+        "timestamp": "2026-01-29T12:59:11.086Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "snapshot": {
+          "messageId": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:26:50.805Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "64a82183-c087-4623-a87e-61b945087432",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hey there"
+        },
+        "uuid": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "timestamp": "2026-01-29T13:26:50.804Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_eb2bf3cf-7872-46cb-9ab8-4c5554cca2e7",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hey there! How can I help you today?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "32aedd86-0d6e-473a-87e6-a241ec807032",
+        "timestamp": "2026-01-29T13:26:51.864Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "snapshot": {
+          "messageId": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:26:57.011Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "32aedd86-0d6e-473a-87e6-a241ec807032",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "how are you, Im great"
+        },
+        "uuid": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "timestamp": "2026-01-29T13:26:57.010Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_0097faaf-198e-4f30-99aa-a7517419063d",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "That's good to hear! I'm doing well and ready to help with whatever you need. What are you working on?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "9a1d09b5-cd56-4bbc-b71f-d1acb1b7ad4a",
+        "timestamp": "2026-01-29T13:26:58.968Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "snapshot": {
+          "messageId": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:33:10.346Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "9a1d09b5-cd56-4bbc-b71f-d1acb1b7ad4a",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hahahaha"
+        },
+        "uuid": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "timestamp": "2026-01-29T13:33:10.345Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_a0e6d719-e542-4c54-bdbd-37b98a898c93",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Haha! Glad you're in good spirits. Let me know if you need help with anything code-related!"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "ee429dad-ca28-49c5-8afb-c6ab60f6158e",
+        "timestamp": "2026-01-29T13:33:12.709Z"
+      }
+    ]
+  },
+  {
+    "id": 1769694020316,
+    "session_id": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+    "timestamp": "2026-01-29T13:40:20.316Z",
+    "session_data": [
+      {
+        "type": "file-history-snapshot",
+        "messageId": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "snapshot": {
+          "messageId": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T12:58:54.625Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": null,
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hi"
+        },
+        "uuid": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "timestamp": "2026-01-29T12:58:54.625Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_9e82b5d1-0417-4947-9dce-104ca169e75b",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hi! I'm here to help you with your software engineering tasks. What would you like to work on today?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "64a82183-c087-4623-a87e-61b945087432",
+        "timestamp": "2026-01-29T12:59:11.086Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "snapshot": {
+          "messageId": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:26:50.805Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "64a82183-c087-4623-a87e-61b945087432",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hey there"
+        },
+        "uuid": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "timestamp": "2026-01-29T13:26:50.804Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_eb2bf3cf-7872-46cb-9ab8-4c5554cca2e7",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hey there! How can I help you today?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "32aedd86-0d6e-473a-87e6-a241ec807032",
+        "timestamp": "2026-01-29T13:26:51.864Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "snapshot": {
+          "messageId": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:26:57.011Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "32aedd86-0d6e-473a-87e6-a241ec807032",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "how are you, Im great"
+        },
+        "uuid": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "timestamp": "2026-01-29T13:26:57.010Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_0097faaf-198e-4f30-99aa-a7517419063d",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "That's good to hear! I'm doing well and ready to help with whatever you need. What are you working on?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "9a1d09b5-cd56-4bbc-b71f-d1acb1b7ad4a",
+        "timestamp": "2026-01-29T13:26:58.968Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "snapshot": {
+          "messageId": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:33:10.346Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "9a1d09b5-cd56-4bbc-b71f-d1acb1b7ad4a",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hahahaha"
+        },
+        "uuid": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "timestamp": "2026-01-29T13:33:10.345Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_a0e6d719-e542-4c54-bdbd-37b98a898c93",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Haha! Glad you're in good spirits. Let me know if you need help with anything code-related!"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "ee429dad-ca28-49c5-8afb-c6ab60f6158e",
+        "timestamp": "2026-01-29T13:33:12.709Z"
+      }
+    ]
+  },
+  {
+    "id": 1769694001734,
+    "session_id": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+    "timestamp": "2026-01-29T13:40:01.734Z",
+    "session_data": [
+      {
+        "type": "file-history-snapshot",
+        "messageId": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "snapshot": {
+          "messageId": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T12:58:54.625Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": null,
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hi"
+        },
+        "uuid": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "timestamp": "2026-01-29T12:58:54.625Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "4e626df4-5d06-4ca5-bb4e-788010631ff6",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_9e82b5d1-0417-4947-9dce-104ca169e75b",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hi! I'm here to help you with your software engineering tasks. What would you like to work on today?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "64a82183-c087-4623-a87e-61b945087432",
+        "timestamp": "2026-01-29T12:59:11.086Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "snapshot": {
+          "messageId": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:26:50.805Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "64a82183-c087-4623-a87e-61b945087432",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hey there"
+        },
+        "uuid": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "timestamp": "2026-01-29T13:26:50.804Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "87477664-0ac5-43ed-875c-f6ab9be48c38",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_eb2bf3cf-7872-46cb-9ab8-4c5554cca2e7",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hey there! How can I help you today?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "32aedd86-0d6e-473a-87e6-a241ec807032",
+        "timestamp": "2026-01-29T13:26:51.864Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "snapshot": {
+          "messageId": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:26:57.011Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "32aedd86-0d6e-473a-87e6-a241ec807032",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "how are you, Im great"
+        },
+        "uuid": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "timestamp": "2026-01-29T13:26:57.010Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "b77a0a3d-7b3a-49cc-9a6c-4c9143f76315",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_0097faaf-198e-4f30-99aa-a7517419063d",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "That's good to hear! I'm doing well and ready to help with whatever you need. What are you working on?"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "9a1d09b5-cd56-4bbc-b71f-d1acb1b7ad4a",
+        "timestamp": "2026-01-29T13:26:58.968Z"
+      },
+      {
+        "type": "file-history-snapshot",
+        "messageId": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "snapshot": {
+          "messageId": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+          "trackedFileBackups": {},
+          "timestamp": "2026-01-29T13:33:10.346Z"
+        },
+        "isSnapshotUpdate": false
+      },
+      {
+        "parentUuid": "9a1d09b5-cd56-4bbc-b71f-d1acb1b7ad4a",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": "hahahaha"
+        },
+        "uuid": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "timestamp": "2026-01-29T13:33:10.345Z",
+        "thinkingMetadata": {
+          "maxThinkingTokens": 31999
+        },
+        "todos": [],
+        "permissionMode": "default"
+      },
+      {
+        "parentUuid": "780751ba-0de5-4abf-9b5a-71b1c7081be2",
+        "isSidechain": false,
+        "userType": "external",
+        "cwd": "/Users/om.shegokar/Documents/claude-cli-error",
+        "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33",
+        "version": "2.1.23",
+        "gitBranch": "",
+        "message": {
+          "id": "msg_a0e6d719-e542-4c54-bdbd-37b98a898c93",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Haha! Glad you're in good spirits. Let me know if you need help with anything code-related!"
+            }
+          ],
+          "model": "zai-org/GLM-4.7-dev",
+          "stop_reason": null,
+          "stop_sequence": null,
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0
+          }
+        },
+        "type": "assistant",
+        "uuid": "ee429dad-ca28-49c5-8afb-c6ab60f6158e",
+        "timestamp": "2026-01-29T13:33:12.709Z"
+      }
+    ]
+  },
+  {
+    "id": 1769693231106,
+    "session_id": "manual-1769693231",
+    "timestamp": "2026-01-29T13:27:11.106Z",
+    "session_data": {
+      "display": "how are you, Im great",
+      "pastedContents": {},
+      "timestamp": 1769693216998,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33"
+    }
+  },
+  {
+    "id": 1769691867505,
+    "session_id": "manual-1769691867",
+    "timestamp": "2026-01-29T13:04:27.505Z",
+    "session_data": {
+      "display": "hi",
+      "pastedContents": {},
+      "timestamp": 1769691534622,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "fd47b12c-6dbc-4a10-b7a0-76291dfafd33"
+    }
+  },
+  {
+    "id": 1769685000165,
+    "session_id": "manual-1769685000",
+    "timestamp": "2026-01-29T11:10:00.165Z",
+    "session_data": {
+      "display": "common one",
+      "pastedContents": {},
+      "timestamp": 1769684988135,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "b914469c-c4b9-401b-bb6e-c11574142c92"
+    }
+  },
+  {
+    "id": 1769684937997,
+    "session_id": "manual-1769684937",
+    "timestamp": "2026-01-29T11:08:57.997Z",
+    "session_data": {
+      "display": "in py mayme Throw an error in a specific programming language?",
+      "pastedContents": {},
+      "timestamp": 1769684921896,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "b914469c-c4b9-401b-bb6e-c11574142c92"
+    }
+  },
+  {
+    "id": 1769684902135,
+    "session_id": "manual-1769684902",
+    "timestamp": "2026-01-29T11:08:22.135Z",
+    "session_data": {
+      "display": "noice",
+      "pastedContents": {},
+      "timestamp": 1769684892886,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "9cf858db-5e4a-4fba-99be-8572f2482d7d"
+    }
+  },
+  {
+    "id": 1769684875177,
+    "session_id": "manual-1769684875",
+    "timestamp": "2026-01-29T11:07:55.177Z",
+    "session_data": {
+      "display": "throw some error",
+      "pastedContents": {},
+      "timestamp": 1769684861461,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "b914469c-c4b9-401b-bb6e-c11574142c92"
+    }
+  },
+  {
+    "id": 1769684840844,
+    "session_id": "manual-1769684840",
+    "timestamp": "2026-01-29T11:07:20.844Z",
+    "session_data": {
+      "display": "hi how are you",
+      "pastedContents": {},
+      "timestamp": 1769684786320,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "0de7e9b1-c809-4f9f-b39d-76b94ed027ab"
+    }
+  },
+  {
+    "id": 1769684826454,
+    "session_id": "manual-1769684826",
+    "timestamp": "2026-01-29T11:07:06.454Z",
+    "session_data": {
+      "display": "hi how are you",
+      "pastedContents": {},
+      "timestamp": 1769684786320,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "0de7e9b1-c809-4f9f-b39d-76b94ed027ab"
+    }
+  },
+  {
+    "id": 1769684297123,
+    "session_id": "manual-1769684297",
+    "timestamp": "2026-01-29T10:58:17.123Z",
+    "session_data": {
+      "display": "hey there",
+      "pastedContents": {},
+      "timestamp": 1769684213205,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "3617c3cc-bd4b-48e4-9e5a-a68c94b6db10"
+    }
+  },
+  {
+    "id": 1769683481174,
+    "session_id": "session-1769683481",
+    "timestamp": "2026-01-29T10:44:41.174Z",
+    "session_data": {
+      "timestamp": "2026-01-29T00:00:00Z",
+      "workingDirectory": "/Users/om.shegokar/Documents/claude-cli-error",
+      "platform": "darwin",
+      "osVersion": "Darwin 25.2.0",
+      "model": "glm-latest",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hehe there"
+        },
+        {
+          "role": "assistant",
+          "content": "Hello! How can I help you today?"
+        },
+        {
+          "role": "user",
+          "content": "/report"
+        }
+      ]
+    }
+  },
+  {
+    "id": 1769683135579,
+    "session_id": "manual-1769683135",
+    "timestamp": "2026-01-29T10:38:55.579Z",
+    "session_data": {
+      "display": "/report ",
+      "pastedContents": {},
+      "timestamp": 1769682465497,
+      "project": "/Users/om.shegokar/Documents/claude-cli-error",
+      "sessionId": "e66da982-66d7-41ec-8c4c-bb9d27301532"
+    }
+  },
+  {
+    "id": 1769681838879,
+    "session_id": "manual-test-004",
+    "timestamp": "2026-01-29T10:17:18.879Z",
+    "session_data": {
+      "user": "Test User",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hello"
+        },
+        {
+          "role": "assistant",
+          "content": "Skipped 3!"
+        }
+      ],
+      "timestamp": "2026-01-29T15:00:00Z"
+    }
+  },
+  {
+    "id": 1769681805135,
+    "session_id": "manual-test-002",
+    "timestamp": "2026-01-29T10:16:45.135Z",
+    "session_data": {
+      "user": "Test User",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hello"
+        },
+        {
+          "role": "assistant",
+          "content": "Hi there!"
+        }
+      ],
+      "timestamp": "2026-01-29T15:00:00Z"
+    }
+  },
+  {
+    "id": 1769681738941,
+    "session_id": "manual-test-002",
+    "timestamp": "2026-01-29T10:15:38.941Z",
+    "session_data": {
+      "user": "Test User",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hello"
+        },
+        {
+          "role": "assistant",
+          "content": "Hi there!"
+        }
+      ],
+      "timestamp": "2026-01-29T15:00:00Z"
+    }
+  },
+  {
+    "id": 1769681028457,
+    "session_id": "test-session-001",
+    "timestamp": "2026-01-29T10:03:48.457Z",
+    "session_data": {
+      "test": "data",
+      "message": "This is a test report"
+    }
+  }
+]
