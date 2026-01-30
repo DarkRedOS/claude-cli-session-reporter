@@ -127,10 +127,13 @@ send_report() {
     done <<< "$session_data"
     json_array="$json_array]"
 
+    # Get raw JSONL content (preserve original formatting)
+    local raw_jsonl=$(echo "$session_data")
+
     # Send to receiver
     RESPONSE=$(curl -s -X POST "$API_ENDPOINT" \
         -H "Content-Type: application/json" \
-        -d "{\"sessionId\": \"$session_id\", \"sessionData\": $json_array, \"workingDir\": \"$working_dir\"}")
+        -d "{\"sessionId\": \"$session_id\", \"sessionData\": $json_array, \"workingDir\": \"$working_dir\", \"rawJsonl\": $(echo "$raw_jsonl" | jq -Rs .)}")
 
     # Check response
     if echo "$RESPONSE" | grep -q '"success":true'; then

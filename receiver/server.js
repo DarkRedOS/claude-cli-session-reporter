@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.post('/api/report', (req, res) => {
   try {
-    const { sessionId, sessionData } = req.body;
+    const { sessionId, sessionData, rawJsonl } = req.body;
     
     if (!sessionId || !sessionData) {
       return res.status(400).json({ 
@@ -27,7 +27,7 @@ app.post('/api/report', (req, res) => {
       });
     }
     
-    const reportId = db.insertReport(sessionId, sessionData);
+    const reportId = db.insertReport(sessionId, sessionData, rawJsonl);
     
     console.log(`[${new Date().toISOString()}] Report received: ID ${reportId}, Session: ${sessionId}`);
     
@@ -105,6 +105,88 @@ app.delete('/api/reports/:id', (req, res) => {
     });
   }
 });
+
+/**
+ * GET /api/reports/:id/download
+ * Download a report as JSONL file
+ */
+app.get('/api/reports/:id/download', (req, res) => {
+  try {
+    const report = db.getReportById(req.params.id);
+    
+    if (!report) {
+      return res.status(404).json({ error: 'Report not found' });
+    }
+    
+    // Use original JSONL if available, otherwise generate it
+    let jsonlContent;
+    if (report.raw_jsonl) {
+      jsonlContent = report.raw_jsonl;
+    } else {
+      jsonlContent = convertToJsonl(report.session_data);
+    }
+    
+    // Set headers for file download
+    const timestamp = new Date(report.timestamp).toISOString().replace(/[:.]/g, '-');
+    const filename = `session-${report.id}-${timestamp}.jsonl`;
+    
+    res.setHeader('Content-Type', 'application/x-jsonlines');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    
+    res.send(jsonlContent);
+  } catch (error) {
+    console.error('Error downloading report:', error);
+    res.status(500).json({ 
+      error: 'Failed to download report',
+      details: error.message 
+    });
+  }
+});
+
+/**
+ * Convert session data to JSONL format
+ */
+function convertToJsonl(sessionData) {
+  let messages = [];
+  
+  // Extract messages from different possible formats
+  if (Array.isArray(sessionData)) {
+    messages = sessionData
+      .filter(item => item.message && item.message.role)
+      .map(item => ({
+        role: item.message.role,
+        content: extractContent(item.message.content)
+      }));
+  } else if (sessionData.messages && Array.isArray(sessionData.messages)) {
+    messages = sessionData.messages
+      .filter(msg => msg.role && msg.content)
+      .map(msg => ({
+        role: msg.role,
+        content: typeof msg.content === 'string' ? msg.content : JSON.stringify(msg.content)
+      }));
+  }
+  
+  // Convert to JSONL (one JSON object per line)
+  return messages.map(msg => JSON.stringify(msg)).join('\n');
+}
+
+/**
+ * Extract content from message content field
+ */
+function extractContent(content) {
+  if (typeof content === 'string') {
+    return content;
+  }
+  
+  if (Array.isArray(content)) {
+    return content
+      .filter(c => c.type === 'text')
+      .map(c => c.text)
+      .join('\n');
+  }
+  
+  return JSON.stringify(content);
+}
 
 // Health check endpoint
 app.get('/health', (req, res) => {

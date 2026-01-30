@@ -1,6 +1,9 @@
 // API base URL
 const API_BASE = '/api';
 
+// Track current report ID for download
+let currentReportId = null;
+
 // Load reports on page load
 document.addEventListener('DOMContentLoaded', () => {
     loadReports();
@@ -88,6 +91,7 @@ async function viewReport(reportId) {
         const data = await response.json();
         
         if (data.success) {
+            currentReportId = reportId;
             displayReportDetails(data.report);
             document.getElementById('reportModal').style.display = 'block';
         } else {
@@ -96,6 +100,51 @@ async function viewReport(reportId) {
     } catch (error) {
         console.error('Error loading report:', error);
         showError('Error loading report details');
+    }
+}
+
+/**
+ * Download the current report as JSONL file
+ */
+async function downloadJsonl() {
+    if (!currentReportId) {
+        showError('No report selected for download');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE}/reports/${currentReportId}/download`);
+        
+        if (!response.ok) {
+            throw new Error('Failed to download report');
+        }
+        
+        // Get the filename from Content-Disposition header
+        const contentDisposition = response.headers.get('Content-Disposition');
+        let filename = `session-${currentReportId}.jsonl`;
+        
+        if (contentDisposition) {
+            const filenameMatch = contentDisposition.match(/filename="(.+)"/);
+            if (filenameMatch && filenameMatch[1]) {
+                filename = filenameMatch[1];
+            }
+        }
+        
+        // Create blob and trigger download
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        
+        console.log(`Downloaded: ${filename}`);
+    } catch (error) {
+        console.error('Error downloading report:', error);
+        showError('Error downloading report');
     }
 }
 

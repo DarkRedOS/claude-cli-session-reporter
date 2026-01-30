@@ -36,13 +36,14 @@ function writeReports(reports) {
 /**
  * Insert a new report
  */
-function insertReport(sessionId, sessionData) {
+function insertReport(sessionId, sessionData, rawJsonl = null) {
     const reports = readReports();
     const newReport = {
         id: Date.now(), // Use timestamp as ID
         session_id: sessionId,
         timestamp: new Date().toISOString(),
-        session_data: sessionData
+        session_data: sessionData,
+        raw_jsonl: rawJsonl
     };
     
     reports.unshift(newReport); // Add to beginning (newest first)
