@@ -23,7 +23,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 id="modalTitle">Report Details</h2>
-                    <button class="close-btn" onclick="closeModal()">&times;</button>
+                    <div class="modal-actions">
+                        <button id="downloadBtn" class="btn btn-secondary" onclick="downloadJsonl()">Download JSONL</button>
+                        <button class="close-btn" onclick="closeModal()">&times;</button>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div id="reportDetails"></div>
